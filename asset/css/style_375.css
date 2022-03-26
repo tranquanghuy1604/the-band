@@ -1,0 +1,39 @@
+@media screen and (max-width: 375px) {
+  /* some CSS here */
+
+  #header {
+    overflow: hidden;
+  }
+  #nav > li {
+    display: block;
+  }
+  #nav > li:first-child {
+    display: inline-block;
+  }
+  #nav .subnav {
+    position: initial;
+    background-color: #000;
+  }
+  #nav .subnav li a {
+    color: #fff;
+    padding: 5px 40px;
+  }
+  #header .search-btn {
+    display: none;
+  }
+  #header .mobile-head {
+    display: block;
+  }
+  .col-third {
+    width: 100%;
+  }
+  #contenct .place-body {
+    margin-bottom: 16px;
+  }
+  .col-second {
+    width: 100%;
+  }
+  #contenct .member-name {
+    margin-top: 30px;
+  }
+}
