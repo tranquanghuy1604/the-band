@@ -19,7 +19,7 @@
           <li><a href="#">Home</a></li>
           <li><a href="#contenct">Band</a></li>
           <li><a href="#tour">Tour</a></li>
-          <li><a href="">Contact</a></li>
+          <li><a href="#contact">Contact</a></li>
           <li>
             <a href="#">
               More
@@ -163,7 +163,7 @@
             </div>
           </div>
         </div>
-        <div class="content-section">
+        <div class="content-section" id="contact">
           <h2 class="section-heading">CONTACT</h2>
           <p class="section-sub-heading">Fan? Drop a note!</p>
           <div class="row contanct-content">
@@ -212,7 +212,7 @@
                 <input
                   type="submit"
                   class="form-submit-btn mt-16"
-                  value="Send"
+                  value="SEND"
                 />
               </form>
             </div>
@@ -234,9 +234,9 @@
       </div>
     </div>
     <div class="modal js-modal">
-      <div class="modal-contaniner">
-        <div class="modal-close">
-          <div class="ti-close"></div>
+      <div class="modal-contaniner js-modal-contaniner">
+        <div class="modal-close js-modal-close">
+          <i class="ti-close"></i>
         </div>
         <header class="modal-header">
           <i class="ti-bag"></i>
@@ -302,17 +302,22 @@
     <script>
       const buyBtns = document.querySelectorAll(".js-buy-tickets");
       const modal = document.querySelector(".js-modal");
-      const modalClose = document.querySelector(".js-modal")
-
+      const modalClose = document.querySelector(".js-modal-close");
+      const modalContaniner = document.querySelector(".js-modal-contaniner");
       function showBuyTickets() {
         modal.classList.add("open");
       }
-      function hideBuyTickets(){
-        modalClose.
+      function hideShowBuyTickets() {
+        modal.classList.remove("open");
       }
       for (const buyBtn of buyBtns) {
         buyBtn.addEventListener("click", showBuyTickets);
       }
+      modalClose.addEventListener("click", hideShowBuyTickets);
+      modal.addEventListener("click", hideShowBuyTickets);
+      modalContaniner.addEventListener("click", function (event) {
+        event.stopPropagation();
+      });
     </script>
   </body>
 </html>

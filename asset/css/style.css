@@ -14,8 +14,7 @@ html {
   margin-left: -8px;
   margin-right: -8px;
 }
-.row::after {
-}
+
 .col {
   float: left;
   padding: 0 8px;
@@ -116,7 +115,7 @@ html {
 
 #nav > li:hover > a,
 #nav .subnav li:hover a {
-  background-color: #ccc;
+  background-color: #ccc; 
   color: #000;
   display: block;
 }
@@ -282,6 +281,7 @@ html {
 #contenct .buy-tickets-btn:hover {
   background-color: #ccc;
   color: #000;
+  cursor: pointer;
 }
 /*Context contanct*/
 #contenct .contanct-content {
@@ -360,6 +360,7 @@ html {
   min-height: 200px;
   position: relative;
   background-color: #fff;
+  animation: modalFadeIn ease 0.5s;
 }
 header.modal-header {
   background-color: #009688;
@@ -367,19 +368,21 @@ header.modal-header {
   display: flex;
   align-items: center;
   justify-content: center;
-  /* position: relative; */
+  position: relative;
   font-size: 30px;
   color: #fff;
 }
-.ti-close {
+.modal-close {
   position: absolute;
+  color: #fff;
   right: 0;
-  padding: 15px;
-  cursor: pointer;
+  padding: 16px;
+  z-index: 1;
 }
-.ti-close:hover {
+.modal-close:hover {
   background-color: #ccc;
   color: #000;
+  cursor: pointer;
 }
 .modal-body {
   padding: 16px;
@@ -400,11 +403,11 @@ header.modal-header {
   background: #009688;
   width: 100%;
   padding: 18px;
-  /* boder: none; */
   color: #fff;
   font-size: 15px;
   text-transform: uppercase;
   cursor: pointer;
+  border: 1px solid #ccc;
 }
 .modal-check:hover {
   background-color: #ccc;
@@ -419,4 +422,14 @@ header.modal-header {
 }
 .open {
   display: flex;
+}
+@keyframes modalFadeIn {
+  from {
+    transform: translateY(-150px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 0.8;
+  }
 }
